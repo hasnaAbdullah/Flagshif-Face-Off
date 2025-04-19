@@ -6,18 +6,34 @@ function Navbar() {
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-indigo-700" : "")}
+          to="/"
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/about">About</NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-indigo-700" : "")}
+          to="about"
+        >
+          About
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/errorpage">
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-indigo-700" : "")}
+          to="/errorpage"
+        >
           <BaggageClaim />
         </NavLink>
       </li>
       <li>
-        <NavLink to="/favorites">
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-indigo-700" : "")}
+          to="/favorites"
+        >
           <MdBookmarkAdd size={26} />
         </NavLink>
       </li>
@@ -34,7 +50,7 @@ function Navbar() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -55,7 +71,7 @@ function Navbar() {
             {links}
           </ul>
         </div>
-        <NavLink to="/" className="text-2xl font-bold text-teal-900">
+        <NavLink to="/" className="text-2xl ml-2 font-bold text-teal-900">
           FlagshipFaceOff
         </NavLink>
       </div>

@@ -6,7 +6,7 @@ function MainLayout() {
   return (
     <div className="max-w-[1480px]  mx-auto">
       <Navbar></Navbar>
-      <div className="min-h-[calc(100vh-117px)]  bg-amber-600 py-10">
+      <div className="min-h-[calc(100vh-117px)] my-20 ">
         <Outlet />
       </div>
       <Footer></Footer>
