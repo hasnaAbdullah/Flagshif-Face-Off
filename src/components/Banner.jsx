@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import PrimaryButton from "./PrimaryButton";
 
-function Banner() {
+function Banner({ handleSearch }) {
+  const [searchValue, setSearchValue] = useState("");
+
   return (
     <div className="flex flex-col items-center justify-center gap-4">
       <img width="800" src="images/banner.png" alt="banner-image" />
@@ -12,10 +14,15 @@ function Banner() {
         Best place to browse, search, view details and purchase of top flagship
         phones of the current time - FlagshipFaceOff
       </p>
-      <form className="max-w-[750px] w-full flex flex-col md:flex-row items-center gap-6">
+      <form
+        onSubmit={(e) => handleSearch(e, searchValue)}
+        className="max-w-[750px] w-full flex flex-col md:flex-row items-center gap-6"
+      >
         <input
           className="p-3 shadow border border-gray-300 rounded-md w-3/4"
           type="text"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search Phone by Name"
         />
         <PrimaryButton buttonText={"Search"} />

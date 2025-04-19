@@ -3,7 +3,8 @@ import Phone from "./Phone";
 import PrimaryButton from "./PrimaryButton";
 import { Link } from "react-router";
 
-function PhonesContainer({ phones }) {
+function PhonesContainer({ phones, searchedPhones }) {
+  console.log(searchedPhones);
   const [displayPhones, setDisplayPhones] = useState([]);
   const [showAll, setShowAll] = useState(false);
   useEffect(() => {
@@ -17,9 +18,13 @@ function PhonesContainer({ phones }) {
   return (
     <div className="pt-20 pb--10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {displayPhones.map((phone) => (
-          <Phone key={phone.id} phone={phone} />
-        ))}
+        {searchedPhones.length
+          ? searchedPhones.map((phone) => (
+              <Phone key={phone.id} phone={phone} />
+            ))
+          : displayPhones.map((phone) => (
+              <Phone key={phone.id} phone={phone} />
+            ))}
       </div>
       <div
         onClick={() => {

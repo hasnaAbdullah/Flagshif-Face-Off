@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 function Phone({ phone }) {
   const { image, description, model } = phone || {};
-  console.log(phone);
+  // console.log(phone);
   return (
     <div className="card bg-base-100 mx-auto shadow-sm">
       <figure>
